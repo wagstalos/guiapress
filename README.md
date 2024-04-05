@@ -1,7 +1,10 @@
 # GuiaPress
 
 ## Descrição
-Este projeto é uma aplicação web chamada GuiaPress, que visa fornecer um guia de informações sobre diversos assuntos.
+Este projeto é uma aplicação web chamada GuiaPress, utilizado para aprender backend usando express, usamos sistema de login de senha com hash, criação de artigos com plugin tinymce, utilizado mysql como banco de dados.
+
+Frontend: bootstrap , ejs.
+backend: express com mySql.
 
 ## Instalação
 1. Certifique-se de ter o Node.js e o npm instalados em sua máquina.
