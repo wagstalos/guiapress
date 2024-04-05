@@ -1,0 +1,24 @@
+.card-wps {
+    width: 23%;
+}
+
+.wps-subtitle {
+    font-size: 1.4rem;
+}
+
+.wps-description {
+    max-width: 250px;
+    font-size: 20dp;
+    height: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Número de linhas que deseja mostrar */
+    -webkit-box-orient: vertical;
+
+}

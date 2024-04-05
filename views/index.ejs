@@ -1,0 +1,42 @@
+<%- include('./partials/header'); %>
+    <%- include('./partials/homenavbar'); %>
+
+        <body>
+            <div class="container">
+                <img class="img-fluid mt-4" src="https://portfolio.wpsgames.com.br/static/media/front.379a6834.webp"
+                    alt="Banner Wagner Silva">
+
+                <h1 class="mt-5">Artigos</h1>
+
+                <div class="d-flex justify-content-between flex-wrap">
+                    <% articles.forEach(function (article) { %>
+                        <div class="card card-wps d-flex mt-4 ">
+                            <div class="card-header p-0">
+                                <img class="img-fluid" src="img/img-card.jpg" alt="capa">
+
+                            </div>
+                            <div class="card-body">
+                                <h2 class="wps-subtitle">
+                                    <%=article.title%>
+                                </h2>
+                                <article class="wps-description mb-4"> <%- article.body %></article>
+                                <a href="/<%= article.slug  %>" class="btn btn-primary w-100">Ler artigo</a>
+                            </div>
+                        </div>
+                        <%})%>
+                </div>
+
+                <!-- paginação -->
+                <div class="row">
+                    <div class="col">
+                        <a href="/articles/page/2" class="float-right btn btn-outline-primary mt-4 mb-4">Next
+                            <i class="bi bi-caret-right"></i></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </body>
+
+        <%- include('./partials/footer') %>

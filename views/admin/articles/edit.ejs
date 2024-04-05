@@ -1,0 +1,79 @@
+<%- include('../../partials/header'); %>
+    <%- include('../../partials/navbar'); %>
+
+        <div class="container">
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h2>Editar artigo</h2>
+                </div>
+
+                <div class="card-body">
+                    <form method="POST" action="/articles/update">
+
+                        <input type="hidden" value="<%= article.id %>" name="id">
+
+                        <input class="form-control mb-4" type="text" name="title"
+                            placeholder="Define o título da artigo" id="js-bodyRegister" value="<%= article.title %>">
+                        <textarea id="article" class="form-control" cols="50" rows="20" name="body"></textarea>
+
+                        <label for="" class="mt-4">Artigo</label>
+                        <br>
+                        <select class="form-control" name="category">
+                            <% categories.forEach(function(category) { %>
+
+                                <% if(category.id==article.categoryId) { %>
+                                    <option value="<%= category.id  %>" selected>
+                                        <%= category.title %>
+                                    </option>
+                                    <%} else {%>
+                                        <option value="<%= category.id  %>">
+                                            <%= category.title %>
+                                        </option>
+
+                                        <% } %>
+                                            <% }); %>
+                        </select>
+                        <br>
+                        <button class="btn btn-primary mt-4" id="js-btnRegister" disabled>Atualizar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="content" style="display: none;">
+            <%- article.body %>
+        </div>
+
+
+        <%- include('../../partials/footer') %>
+            <script src="/tinymce/tinymce.min.js"></script>
+            <script>
+                tinymce.init({
+                    selector: '#article',
+                    plugins: [
+                        'emoticons',
+                        'media',
+                        'link',
+                        'image',
+                        'code',
+                        'table',
+                        'paste',
+                        'autoresize',
+                        'print',
+                        'preview',
+                        'fullscreen',
+                        'searchreplace',
+                        'advlist',
+                        'autolink',
+                        'lists',
+                        'save',
+                        'insertdatetime',
+                        'media'
+                    ],
+                    init_instance_callback: () => {
+                        tinymce.get("article").setContent($("#content").html());
+                    }
+                });
+            </script>

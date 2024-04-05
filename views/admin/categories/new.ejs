@@ -1,0 +1,23 @@
+<%- include('../../partials/header'); %>
+    <%- include('../../partials/navbar'); %>
+
+        <div class="container">
+
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h2>Cadastro de categorias</h2>
+                </div>
+
+                <div class="card-body">
+                    <form method="POST" action="/categories/save">
+                        <input class="form-control mb-4" type="text" name="title"
+                            placeholder="Define o título da categoria" id="js-bodyRegister">
+                        <button class="btn btn-success" id="js-btnRegister" disabled>Cadastrar</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        <%- include('../../partials/footer') %>
